@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+
+/*import(imagem) sempre o antes do reset*/
+/*reset*/  
+* {
+    margin: 0;
+    /*todos com margem 0*/
+    padding: 0;
+    /* todos com 0  */
+    box-sizing: border-box;
+    /* todos elementos com border-box */
+}
+body { 
+    font-family: 'Poppins', sans-serif;
+    /* dentro deste body a fonte do import */
+}
+ul, ol {
+    list-style: none;
+    /* regra de não ter os marcadores em todas as UL's */
+}
+a {
+    text-decoration: none;
+
+}
+/****** header *******/
+.header-page{
+    /* vamos definir a largura e altura dele, em 100% sempre o total da página como padrão */
+    width: 100%;
+    /* height: 80px; com isso diminuido e aumentando automaticamente*/
+    /* Para altura pré-definida, min-height:  */
+    min-height: 80px;
+
+    /* margin: 100px; */
+    /*margem de 100px para todos os lados, dentro de hearder, se for = 20(x -> cima baixo) e 40(y -> direita/esquerda)*/
+    display: flex;
+    /* quebrando o padrão do header (pai) containers h1 e nav ao lado, TEMOS QUE DEIXÁ-LO */
+    align-items: center;
+    /*alinhamento vertical ou horizontal, unidirecional */
+    justify-content: space-between;
+    /*em vertical (align-items), start, center e and, ou horizontal (justify-content), space-between 1 no meio 2 no final e etc...*/
+    flex-wrap: wrap;
+    padding: 0 30px;
+    /*preenchimento distância das bordas, interno ou seja das frases*/
+    /* box-sizing: border-box; */
+    position: absolute;
+    /* mudando o fluxo da posição do header */
+}
+.header-title{
+    color: #fff;
+}
+/****** header-menu=nav --> ul, para as minhas linkis *******/
+.header-menu ul {
+    display: flex;
+
+}
+.header-menu li {
+    margin: 0 15px;
+}
+.header-menu a {
+    color: #fff;
+    transition: .5s;
+}
+.header-menu a:hover{
+    color: #dc143c;
+}
+/****** fim header *******/
+/****** hero *******/
+.hero{
+    width: 100%;
+    /* largura sendo 100%, para não pegar a barra de rolagem */
+    height: 100vh;
+    /* informando o tamanho do container */
+    background-image: linear-gradient(to left, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)), 
+    url(../images/pexels-felix-mittermeier-957002.jpg);
+    /* imagem de fundo com url da imagem dentro, liner e rgba o trabalho de mudança de cor  */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Para a gente  regular a imagem preencha todo o container*/
+    background-position: center;
+    display: flex;
+    /* deixando flexivel, mas todos retos */
+    flex-direction: column;
+    /* mundando a direção, como: colunas, no align e jusitify vão estar invertidos */
+    align-items: center;
+    /* horizontal */
+    justify-content: center;
+    /* vertical */
+    padding: 0 20px;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 8vmin;
+    /* pegando 10% do menor viewport */
+    margin-bottom: 40px;
+    text-align: center;
+}
+.hero-sub-title{
+    color: #fff;
+    font-size: 5vmin;
+    margin-bottom: 50px;
+}
+.btn {
+    color: #fff;
+    border: 3px solid #dc143c;
+    padding: 10px 20px;
+    background-color: #dc143c;
+    border-radius: 70px; 
+    /* na borda: e o tamanho e estilo*/
+    transition: 5s;
+    font-weight: 700;
+}
+
+.btn-small{
+    padding: 5px 15px; 
+}
+.btn:hover{
+    background-color: transparent;
+    /* hover mudança de cor, ou seja transparente, no btn fazemos a transição quando sai e entra */
+}
+/****** fim hero *******/
+/****** cards *******/
+.cards{
+    width: 90%;
+    min-height: 100vh;
+    /* border:1px solid #000; */
+    margin: 100px auto;
+    text-align: center;
+    /* centralizando o texto */
+}
+.card-title{
+    margin: 30px 0;
+    /* colocando o texto do card para 30px cada lado */
+    margin-bottom: 30px;
+}
+.cards-elements{
+    /*Formatando imagens  */
+    width: 100%;
+    /* ocupando 100% dos 90% */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* quebre dwe qualquer forma */
+}
+
+.card-item{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px 0px rgba(173,149,173,1);
+    padding: 30px 15px;
+    transition: .5s;
+    overflow: hidden;
+    /* 40% dos 100% do elementes do container div */
+}
+
+.card-item img{
+    
+    width: 100%;
+    border-radius: 7px;
+    
+
+    /* 100% dos 40% do item section */
+}
+
+.card-item:hover{
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+.card-item h3{
+    margin: 10px 0 10px;
+    
+}
+.card-item p {
+    text-align: left;
+    font-size: 15px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.card-item .btn:hover{
+    color: #000;
+    /* mudando de cor para preto depois de um tempo selecionado, mas somente para os containers article --> divs imagens */
+}
+/****** fim cards *******/
+
+/****** footer *******/
+footer {
+    width: 100%;
+    height: 20vh;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+.redes a{
+    color: #666;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: .5s;
+}
+.redes a:hover{
+    color: #dc143c;
+}
+/****** fim footer *******/
+
+/* Pensando no responsivo */
+@media(max-width: 780px) {
+    /*Ponto onde o layout quebra, Ele vê o tamanho máximo e chega até 780  */
+
+    .card-item{
+        width: 80%;
+        align-items: center;
+    }
+    .card-item p{
+        text-align: center;
+    }
+}
+
+@media(max-width: 600px){
+    .header-page{
+        justify-content: space-around;
+    }
+
+    .header-menu a{
+        font-size: 13px;
+    }
+}
